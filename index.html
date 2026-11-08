@@ -3,6 +3,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Sentry: must be the first script on the page -->
+    <script
+        src="https://browser.sentry-cdn.com/10.42.0/bundle.tracing.min.js"
+        integrity="sha384-DIqcfVcfIewrWiNWfVZcGWExO5v673hkkC5ixJnmAprAfJajpUDEAL35QgkOB5gw"
+        crossorigin="anonymous"
+    ></script>
+    <script>
+        Sentry.init({
+            dsn: "https://127d2891ca25fb90b28d414188fd40f7@o4512383319605248.ingest.us.sentry.io/4512383375572992",
+            environment: ["localhost", "127.0.0.1"].includes(location.hostname) ? "development" : "production",
+            release: "cyb3rw0lf_site@1.0.0",
+            integrations: [Sentry.browserTracingIntegration()],
+            tracesSampleRate: 1.0,
+        });
+    </script>
     <title>GFG</title>
 </head>
 <body>
